@@ -1,17 +1,13 @@
 require 'formula'
 
 class Node <Formula
-  url 'http://nodejs.org/dist/node-v0.1.101.tar.gz'
+  url 'http://nodejs.org/dist/node-v0.1.103.tar.gz'
   head 'git://github.com/ry/node.git'
   homepage 'http://nodejs.org/'
-  md5 'd6bb2c6fb87631e4801d281486329d16'
-
-  aka 'node.js'
+  md5 '378307512e380e279969b0936e5ec5cc'
 
   # Stripping breaks dynamic loading
-  def skip_clean? path
-    true
-  end
+  skip_clean :all
 
   def install
     fails_with_llvm
